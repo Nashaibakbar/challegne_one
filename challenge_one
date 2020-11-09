@@ -1,0 +1,30 @@
+pragma solidity ^0.5.17;
+
+contract challengeone
+{
+ uint index=0;
+    
+struct Student 
+{
+uint id;
+string name;
+}
+
+mapping(uint => Student)  students;
+
+function setStudentsValue( uint _id, string memory _name) public 
+{
+students[index].id=_id;
+students[index].name=_name;
+index++;
+}
+
+function getStudentValue(uint _index) public view returns(uint,string memory)
+{
+return (students[_index].id,students[_index].name);
+}
+
+}
+
+
+
